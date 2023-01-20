@@ -164,4 +164,4 @@ export const typeKeys = Object.keys(types).sort(function compareFn(a, b) {
   return -1;
 });
 
-export default types;
+export default typeKeys.map((key) => [key, types[key]]);

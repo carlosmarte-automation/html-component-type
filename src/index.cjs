@@ -1,15 +1,7 @@
+import createDefinition from "./create-definition.mjs";
+import { createRegex, matches } from './matches.mjs'
+import types from "./types.js";
 
-import getSelector from "axe-selector";
-import absoluteCssPathSelector from "./absolute-css-path-selector.js";
-
-console.log(getSelector)
-export { absoluteCssPathSelector, getSelector }
-
-const absoluteCssPathSelectors = (element, options) => {
-    return {
-        locator: getSelector.default(element, options),
-        absolute: absoluteCssPathSelector(element, options).join(' ')
-    }
-};
-
-export default absoluteCssPathSelectors;
+export {
+    createDefinition, createRegex, matches, types
+}
