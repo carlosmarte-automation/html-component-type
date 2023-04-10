@@ -17,30 +17,44 @@ export default [
   },
   {
     mode: "production",
-    entry: "./src/index.js",
+    entry: "./node_modules/resq/dist/index.js",
     output: {
       path: path.resolve("bundle"),
-      filename: "index.bundle.js",
-      library: "absoluteCssPathSelectors",
+      filename: "resq.bundle.js",
+      library: "resq",
       libraryTarget: "umd",
-      libraryExport: "default",
+      // libraryExport: "default",
       globalObject: "this",
     },
-    module: {
-      rules: [
-        {
-          test: /\.m?js$/,
-          exclude: /node_modules/,
-          use: {
-            loader: "babel-loader",
-            options: {
-              presets: [["@babel/preset-env"]],
-            },
-          },
-        },
-      ],
-    },
   },
+
+  
+  // {
+  //   mode: "production",
+  //   entry: "./src/index.cjs",
+  //   output: {
+  //     path: path.resolve("bundle"),
+  //     filename: "standalone.js",
+  //     library: "absoluteCssPathSelectors",
+  //     libraryTarget: "umd",
+  //     libraryExport: "default",
+  //     globalObject: "this",
+  //   },
+  //   module: {
+  //     rules: [
+  //       {
+  //         test: /\.m?js$/,
+  //         exclude: /node_modules/,
+  //         use: {
+  //           loader: "babel-loader",
+  //           options: {
+  //             presets: [["@babel/preset-env"]],
+  //           },
+  //         },
+  //       },
+  //     ],
+  //   },
+  // },
 ];
 
 //const selector = getSelector(el)
